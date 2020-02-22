@@ -1,0 +1,253 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" th:href="@{/css/amazeui.min.css}">
+    <link rel="stylesheet" th:href="@{/css/wap.css}">
+    <title>疫情预测趋势</title>
+    <script type="text/javascript" th:src="@{/echarts/echarts.min.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/china.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body style="background:#ececec">
+<div class="pet_mian" >
+    <div class="pet_head">
+        <header data-am-widget="header"
+                class="am-header am-header-default pet_head_block">
+            <div class="am-header-left am-header-nav ">
+                <a href="javascript:history.back(-1)"  class="iconfont pet_head_jt_ico">&#xe601;</a>
+            </div>
+
+            <h1 class="am-header-title pet_article_user">
+                <div class="pet_article_user_info_tab">
+                    <div class="pet_article_user_info_tab_font">
+                        <div class="pet_article_user_info_tab_font_triangle"></div>
+                        <div class="pet_article_user_info_tab_font_center"><i>文章</i><span>16篇</span></div>
+                        <!--         <div class="pet_article_user_info_tab_font_center"><i>涂鸦</i><span>89张</span></div>
+                                <div class="pet_article_user_info_tab_font_center_line"></div>
+                                <div class="pet_article_user_info_tab_font_center"><a href="###">查看全部资料</a></div> -->
+                    </div>
+                </div>
+                <span class="pet_article_user_ico"><img src="img/a1.png" alt="" class=""></span>
+                <span class="pet_article_user_name">物资供应</span>
+            </h1>
+
+            <div class="am-header-right am-header-nav">
+                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>
+            </div>
+        </header>
+    </div>
+
+
+
+    <div class="pet_more_list"><div class="pet_more_list_block">
+        <div class="iconfont pet_more_close">×</div>
+        <div class="pet_more_list_block">
+            <div class="pet_more_list_block_name">
+                <div class="pet_more_list_block_name_title">阅读 Read</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe601;</i>
+                    <div class="pet_more_list_block_line_font">新鲜事</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe606;</i>
+                    <div class="pet_more_list_block_line_font">涨知识</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe607;</i>
+                    <div class="pet_more_list_block_line_font">看涂鸦</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe603;</i>
+                    <div class="pet_more_list_block_line_font">萌专题</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe611;</i>
+                    <div class="pet_more_list_block_line_font">百科</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe60c;</i>
+                    <div class="pet_more_list_block_line_font">问答</div>
+                </a>
+                <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe600;</i>
+                    <div class="pet_more_list_block_line_font">美容</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe602;</i>
+                    <div class="pet_more_list_block_line_font">医院</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe604;</i>
+                    <div class="pet_more_list_block_line_font">店铺</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sy pet_more_list_block_line_ico">&#xe610;</i>
+                    <div class="pet_more_list_block_line_font">摄影</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xx pet_more_list_block_line_ico">&#xe612;</i>
+                    <div class="pet_more_list_block_line_font">学校</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sz pet_more_list_block_line_ico">&#xe60f;</i>
+                    <div class="pet_more_list_block_line_font">水族</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_ms pet_more_list_block_line_ico">&#xe60e;</i>
+                    <div class="pet_more_list_block_line_font">猫舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qs pet_more_list_block_line_ico">&#xe60b;</i>
+                    <div class="pet_more_list_block_line_font">犬舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qt pet_more_list_block_line_ico">&#xe60d;</i>
+                    <div class="pet_more_list_block_line_font">其它</div>
+                </a>
+            </div>
+        </div>
+
+    </div></div>
+
+
+
+    <div class="pet_content">
+        <div class="pet_content_block">
+            <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+                <h1 class="pet_article_title">湖北省2月份物资供应情况</h1>
+                <div class="pet_article_user_time">发表于：2012-02</div>
+
+                <!--       =========================================                    地图      ===============================================                                             -->
+
+                <div id="main2" style="width: 100%;height:400%;text-align: center"  ></div>
+                <script type="text/javascript">
+                    var option = {
+                        title: {
+                            text: '湖北省物资供应',
+                            subtext : "实时更新",
+                            left: 'center'
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c} ({d}%)'
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            left: 'left',
+                            data: ['水果', '蔬菜', '活禽', '粮食', '食品饮料','快消医药']
+                        },
+                        series: [
+                            {
+                                name: '物资供应',
+                                type: 'pie',
+                                radius: '55%',
+                                center: ['50%', '60%'],
+                                data: [
+                                    {value: 46, name: '水果'},
+                                    {value: 76, name: '蔬菜'},
+                                    {value: 28, name: '活禽'},
+                                    {value: 31, name: '粮食'},
+                                    {value: 34, name: '食品饮料'},
+                                    {value: 30, name: '快消医药'},
+                                ],
+                                emphasis: {
+                                    itemStyle: {
+                                        shadowBlur: 10,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ]
+                    };
+
+
+                    var myChart = echarts.init(document.getElementById('main2'));
+                    myChart.setOption(option);
+                    //自适应大小
+                    window.addEventListener("resize",function () {
+                        myChart.resize();
+                    })
+
+                </script>
+
+
+
+                <p>此次疫情，湖北武汉、黄冈、孝感三地受染情况严重，以武汉尤甚。1月23日，武汉宣布封城，此后一周，由武汉出发的货物相较前一周锐减92.7%，发往武汉的货物量整体下降75%。封城前后，发往武汉的货物类型也发生了明显变化，TOP5由蔬菜、快递、水果、食品饮料、配件等变为蔬菜、快递、快消医药、机械设备、农产品，其中快消医药相较一周前增长29.3%。</p>
+                <p>受各地疫情防范措施影响，加之农历新年货主与货车司机均休假在家，疫情爆发期间，运往湖北的各类货物量相较前一个月，均有不同程度的下降，但保障性物资整体较为稳定，其中蔬菜降幅最小，仅为18%，水果和快消医药次之。建材和金属钢材虽下降幅度明显，但仍位列运入湖北货物类型前十，足见火神山、雷神山以及方舱医院的抢建，对此类物资需求之大。</p> </article>
+            <ul class="like_share_block">
+                <li><a class="link_share_button" href="###"><i class="iconfont share_ico_link">&#xe62f;</i>1460</a></li>
+                <li><a class="link_share_button" href="###"><i class="iconfont share_ico_wx">&#xe630;</i>微信</a></li>
+                <li><a class="link_share_button" href="###"><i class="iconfont share_ico_pyq">&#xe62e;</i>朋友圈</a></li>
+            </ul>
+            <div class="pet_article_dowload">
+                <div class="pet_article_dowload_title">关于Amaze UI</div>
+                <div class="pet_article_dowload_content"><div class="pet_article_dowload_triangle"></div>
+                    <div class="pet_article_dowload_ico"><img src="img/footdon.png" alt=""></div>
+                    <div class="pet_article_dowload_content_font">
+                        Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
+                    </div>
+                    <div class="pet_article_dowload_all">
+                        <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>
+                        <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="pet_article_footer_info">Copyright(c)2020 wang All Rights Reserved</div>
+    </div>
+</div>
+
+<script th:src="@{/js/amazeui.min.js}"></script>
+
+<script>
+    $(function(){
+        // 动态计算优酷土豆QQ视频等视频引用尺寸问题
+        function auto_video(){
+            var iframe_width = $('article > embed').width();
+            $('article > embed').height(iframe_width/4*3);
+            $('article > embed').css({'display':'block','margin':'20px auto'});
+        }
+        // 动态计算新闻列表文字样式
+        auto_resize();
+        auto_video();
+        $(window).resize(function() {
+            auto_resize();
+            auto_video();
+        });
+        $('.am-list-thumb img').load(function(){
+            auto_resize();
+        });
+        $('.pet_article_like li:last-child').css('border','none');
+        function auto_resize(){
+            $('.pet_list_one_nr').height($('.pet_list_one_img').height());
+            // alert($('.pet_list_one_nr').height());
+        }
+        $('.pet_article_user').on('click',function(){
+            if($('.pet_article_user_info_tab').hasClass('pet_article_user_info_tab_show')){
+                $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_show').addClass('pet_article_user_info_tab_cloes');
+            }else{
+                $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_cloes').addClass('pet_article_user_info_tab_show');
+            }
+        });
+
+        $('.pet_head_gd_ico').on('click',function(){
+            $('.pet_more_list').addClass('pet_more_list_show');
+        });
+        $('.pet_more_close').on('click',function(){
+            $('.pet_more_list').removeClass('pet_more_list_show');
+        });
+    });
+
+</script>
+</body>
+</html>

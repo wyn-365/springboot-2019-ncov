@@ -1,0 +1,473 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" th:href="@{/css/amazeui.min.css}">
+    <link rel="stylesheet" th:href="@{/css/wap.css}">
+    <title>疫情预测趋势</title>
+    <script type="text/javascript" th:src="@{/echarts/echarts.min.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/china.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body style="background:#ececec">
+<div class="pet_mian" >
+    <div class="pet_head">
+        <header data-am-widget="header"
+                class="am-header am-header-default pet_head_block">
+            <div class="am-header-left am-header-nav ">
+                <a href="javascript:history.back(-1)" class="iconfont pet_head_jt_ico">&#xe601;</a>
+            </div>
+
+            <h1 class="am-header-title pet_article_user">
+                <div class="pet_article_user_info_tab">
+                    <div class="pet_article_user_info_tab_font">
+                        <div class="pet_article_user_info_tab_font_triangle"></div>
+                        <div class="pet_article_user_info_tab_font_center"><i>文章</i><span>16篇</span></div>
+                        <!--         <div class="pet_article_user_info_tab_font_center"><i>涂鸦</i><span>89张</span></div>
+                                <div class="pet_article_user_info_tab_font_center_line"></div>
+                                <div class="pet_article_user_info_tab_font_center"><a href="###">查看全部资料</a></div> -->
+                    </div>
+                </div>
+                <span class="pet_article_user_ico"><img src="img/a1.png" alt="" class=""></span>
+                <span class="pet_article_user_name">疫情散点图</span>
+            </h1>
+
+            <div class="am-header-right am-header-nav">
+                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>
+            </div>
+        </header>
+    </div>
+
+
+
+    <div class="pet_more_list"><div class="pet_more_list_block">
+        <div class="iconfont pet_more_close">×</div>
+        <div class="pet_more_list_block">
+            <div class="pet_more_list_block_name">
+                <div class="pet_more_list_block_name_title">阅读 Read</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe601;</i>
+                    <div class="pet_more_list_block_line_font">新鲜事</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe606;</i>
+                    <div class="pet_more_list_block_line_font">涨知识</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe607;</i>
+                    <div class="pet_more_list_block_line_font">看涂鸦</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe603;</i>
+                    <div class="pet_more_list_block_line_font">萌专题</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe611;</i>
+                    <div class="pet_more_list_block_line_font">百科</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe60c;</i>
+                    <div class="pet_more_list_block_line_font">问答</div>
+                </a>
+                <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe600;</i>
+                    <div class="pet_more_list_block_line_font">美容</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe602;</i>
+                    <div class="pet_more_list_block_line_font">医院</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe604;</i>
+                    <div class="pet_more_list_block_line_font">店铺</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sy pet_more_list_block_line_ico">&#xe610;</i>
+                    <div class="pet_more_list_block_line_font">摄影</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xx pet_more_list_block_line_ico">&#xe612;</i>
+                    <div class="pet_more_list_block_line_font">学校</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sz pet_more_list_block_line_ico">&#xe60f;</i>
+                    <div class="pet_more_list_block_line_font">水族</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_ms pet_more_list_block_line_ico">&#xe60e;</i>
+                    <div class="pet_more_list_block_line_font">猫舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qs pet_more_list_block_line_ico">&#xe60b;</i>
+                    <div class="pet_more_list_block_line_font">犬舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qt pet_more_list_block_line_ico">&#xe60d;</i>
+                    <div class="pet_more_list_block_line_font">其它</div>
+                </a>
+            </div>
+        </div>
+
+    </div></div>
+
+
+
+    <div class="pet_content">
+        <div class="pet_content_block">
+            <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+                <h1 class="pet_article_title">全国省份疫情分布散点图</h1>
+                <div class="pet_article_user_time">更新与：2020-02-22</div>
+
+                <!--       =========================================                    地图      ===============================================                                             -->
+
+                <div id="main3" style="width: 100%;height:400%;text-align: center"></div>
+                <script type="text/javascript" th:inline="javascript">
+                    // function randomData() {
+                    //     return Math.round(Math.random()*500);
+                    // }
+                var beijingshi = [[${beijingshi}]];
+                var tianjin = [[${tianjin}]];
+                var shanghai = [[${shanghai}]];
+                var chongqing = [[${chongqing}]];
+                var yunnan = [[${yunnan}]];
+                var hebei = [[${hebei}]];
+                var henan = [[${henan}]];
+                var liaoning = [[${liaoning}]];
+                var heilongjiang = [[${heilongjiang}]];
+                var hunan = [[${hunan}]];
+                var anhui = [[${anhui}]];
+                var shandong = [[${shandong}]];
+                var xinjiang = [[${xinjiang}]];
+                var jiangsu = [[${jiangsu}]];
+                var zhejiang = [[${zhejiang}]];
+                var jiangxi = [[${jiangxi}]];
+                var hubei = [[${hubei}]];
+                var guangxi = [[${guangxi}]];
+                var gansu = [[${gansu}]];
+                var shanxi = [[${shanxi}]];
+                var shanxi2 = [[${shanxi2}]];
+                var jilin = [[${jilin}]];
+                var fujian = [[${fujian}]];
+                var guizhou = [[${guizhou}]];
+                var guangdong = [[${guangdong}]];
+                var qinghai = [[${qinghai}]];
+                var xizang = [[${xizang}]];
+                var sichuan = [[${sichuan}]];
+                var ningxia = [[${ningxia}]];
+                var hainan = [[${hainan}]];
+                var taiwan = [[${taiwan}]];
+                var xianggang = [[${xianggang}]];
+                var aomen = [[${aomen}]];
+                var neimenggu = [[${neimenggu}]];
+
+                    var geoCoordMap = {
+                        '新疆': [86.61 , 40.79],
+                        '西藏':[89.13 , 30.66],
+                        '黑龙江':[128.34 , 47.05],
+                        '吉林':[126.32 , 43.38],
+                        '辽宁':[123.42 , 41.29],
+                        '内蒙古':[112.17 , 42.81],
+                        '北京':[116.40 , 40.40 ],
+                        '宁夏':[106.27 , 36.76],
+                        '山西':[111.95,37.65],
+                        '河北':[115.21 , 38.44],
+                        '天津':[117.04 , 39.52],
+                        '青海':[97.07 , 35.62],
+                        '甘肃':[103.82 , 36.05],
+                        '山东':[118.01 , 36.37],
+                        '陕西':[108.94 , 34.46],
+                        '河南':[113.46 , 34.25],
+                        '安徽':[117.28 , 31.86],
+                        '江苏':[120.26 , 32.54],
+                        '上海':[121.46 , 31.28],
+                        '四川':[103.36 , 30.65],
+                        '湖北':[112.29 , 30.98],
+                        '浙江':[120.15 , 29.28],
+                        '重庆':[107.51 , 29.63],
+                        '湖南':[112.08 , 27.79],
+                        '江西':[115.89 , 27.97],
+                        '贵州':[106.91 , 26.67],
+                        '福建':[118.31 , 26.07],
+                        '云南':[101.71 , 24.84],
+                        '台湾':[121.01 , 23.54],
+                        '广西':[108.67 , 23.68],
+                        '广东':[113.98 , 22.82],
+                        '海南':[110.03 , 19.33],
+                        '澳门':[113.54 , 22.19],
+                        '香港':[114.17 , 22.32]
+                    };
+
+                    var data=[
+                        {name:'新疆', value:xinjiang},
+                        {name:'西藏', value:xizang},
+                        {name:'黑龙江', value:heilongjiang},
+                        {name:'吉林', value:jilin},
+                        {name:'辽宁', value:liaoning},
+                        {name:'内蒙古', value:neimenggu},
+                        {name:'北京', value:beijingshi},
+                        {name:'宁夏', value:ningxia},
+                        {name:'山西', value:shanxi},
+                        {name:'河北', value:hebei},
+                        {name:'天津', value:tianjin},
+                        {name:'青海', value:qinghai},
+                        {name:'甘肃', value:gansu},
+                        {name:'山东', value:shandong},
+                        {name:'陕西', value:shanxi2},
+                        {name:'河南', value:henan},
+                        {name:'安徽', value:anhui},
+                        {name:'江苏', value:jiangsu},
+                        {name:'上海', value:shanghai},
+                        {name:'四川', value:sichuan},
+                        {name:'湖北', value:hubei},
+                        {name:'浙江', value:zhejiang},
+                        {name:'重庆', value:chongqing},
+                        {name:'湖南', value:hunan},
+                        {name:'江西', value:jiangxi},
+                        {name:'贵州', value:guizhou},
+                        {name:'福建', value:fujian},
+                        {name:'云南', value:yunnan},
+                        {name:'台湾', value:taiwan},
+                        {name:'广西', value:guangxi},
+                        {name:'广东', value:guangdong},
+                        {name:'海南', value:hainan},
+                        {name:'澳门', value:aomen},
+                        {name:'香港', value:xianggang}
+                    ];
+                    var convertData = function (data) {
+                        var res = [];
+                        for (var i = 0; i < data.length; i++) {
+                            var geoCoord = geoCoordMap[data[i].name];
+                            if (geoCoord) {
+                                res.push({
+                                    name: data[i].name,
+                                    value: geoCoord.concat(data[i].value)
+                                });
+                            }
+                        }
+                        return res;
+                    };
+
+                    var option = {
+                        title: {
+                            text: '各省疫情分布散点图',
+                            left: 'center'
+                        },
+                        tooltip : {
+                            trigger: 'item'
+                        },
+                        geo: {
+                            map: 'china',
+                            label: {
+                                emphasis: {
+                                    show: false
+                                }
+                            },
+                            roam: true,
+                            itemStyle: {
+                                normal: {
+                                    areaColor: '#FFFFFF',
+                                    borderColor: '#000000'
+                                },
+                                emphasis: {
+                                    areaColor: '#808080'
+                                }
+                            }
+                        },
+                        series : [
+                            {
+                                name: '感染人数',
+                                type: 'scatter',
+                                coordinateSystem: 'geo',
+                                data: convertData(data),
+                                symbolSize: function (val) {
+                                    if (val[2]>0 && val[2]< 10){
+                                        return val[2] / 2;
+                                    }
+                                    else if (val[2]>= 10 && val[2]<100){
+                                        return val[2] / 5;
+                                    }
+                                    else if (val[2]>=100 && val[2]<500){
+                                        return val[2] / 10;
+                                    }
+                                    else if (val[2]>= 500&& val[2]<1000){
+                                        return val[2] / 30;
+                                    }
+                                    else if (val[2]>= 1000&& val[2]<2000){
+                                        return val[2] / 70;
+                                    }
+                                    else if (val[2]>= 2000&& val[2]<5000){
+                                        return val[2] / 100;
+                                    }
+                                    else if (val[2]>= 40000&& val[2]<50000){
+                                        return val[2] / 1000;
+                                    }
+                                    else if (val[2]>= 50000&& val[2]<60000){
+                                        return val[2] / 1200;
+                                    }
+                                },
+                                label: {
+                                    formatter: '{b}',
+                                    position: 'right',
+                                    show: true
+                                },
+                                itemStyle: {
+                                    color: 'red'
+                                },
+                                emphasis: {
+                                    label: {
+                                        show: true
+                                    }
+                                }
+                            },
+                            {
+                                name: 'Top 5',
+                                type: 'effectScatter',
+                                coordinateSystem: 'geo',
+                                data: convertData(data.sort(function (a, b) {
+                                    return b.value - a.value;
+                                }).slice(0, 5)),
+                                symbolSize: function (val) {
+                                    if (val[2]>0 && val[2]< 10){
+                                        return val[2] / 2;
+                                    }
+                                    else if (val[2]>= 10 && val[2]<100){
+                                        return val[2] / 5;
+                                    }
+                                    else if (val[2]>=100 && val[2]<500){
+                                        return val[2] / 10;
+                                    }
+                                    else if (val[2]>= 500&& val[2]<1000){
+                                        return val[2] / 30;
+                                    }
+                                    else if (val[2]>= 1000&& val[2]<2000){
+                                        return val[2] / 70;
+                                    }
+                                    else if (val[2]>= 2000&& val[2]<5000){
+                                        return val[2] / 100;
+                                    }
+                                    else if (val[2]>= 40000&& val[2]<50000){
+                                        return val[2] / 1000;
+                                    }
+                                    else if (val[2]>= 50000&& val[2]<60000){
+                                        return val[2] / 1200;
+                                    }
+                                },
+                                showEffectOn: 'render',
+                                rippleEffect: {
+                                    brushType: 'stroke'
+                                },
+                                hoverAnimation: true,
+                                label: {
+                                    formatter: '{b}',
+                                    position: 'right',
+                                    show: true
+                                },
+                                itemStyle: {
+                                    color: 'red',
+                                    shadowBlur: 10,
+                                    shadowColor: '#333'
+                                },
+                                zlevel: 1
+                            }
+                        ]
+                    };
+
+                    var myChart = echarts.init(document.getElementById('main3'));
+                    myChart.setOption(option);
+                    //自适应大小
+                    window.addEventListener("resize",function () {
+                        myChart.resize();
+                    })
+                </script>
+
+
+
+
+
+
+
+
+
+
+                <ul class="like_share_block">
+                </ul>
+                <div class="pet_article_dowload">
+                    <div class="pet_article_dowload_title">关于Amaze UI</div>
+                    <div class="pet_article_dowload_content"><div class="pet_article_dowload_triangle"></div>
+                        <div class="pet_article_dowload_ico"><img src="img/footdon.png" alt=""></div>
+                        <div class="pet_article_dowload_content_font">
+                            Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
+                        </div>
+                        <div class="pet_article_dowload_all">
+                            <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>
+                            <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>
+                        </div>
+                    </div>
+                </div>
+            </article></div>
+
+        <div class="pet_article_like">
+
+
+
+            <div class="pet_content_main pet_article_like_delete">
+
+
+            </div>
+
+
+
+            <div class="pet_article_footer_info">Copyright(c)2015 Amaze UI All Rights Reserved</div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/amazeui.min.js}"></script>
+
+    <script>
+        $(function(){
+            // 动态计算优酷土豆QQ视频等视频引用尺寸问题
+            function auto_video(){
+                var iframe_width = $('article > embed').width();
+                $('article > embed').height(iframe_width/4*3);
+                $('article > embed').css({'display':'block','margin':'20px auto'});
+            }
+            // 动态计算新闻列表文字样式
+            auto_resize();
+            auto_video();
+            $(window).resize(function() {
+                auto_resize();
+                auto_video();
+            });
+            $('.am-list-thumb img').load(function(){
+                auto_resize();
+            });
+            $('.pet_article_like li:last-child').css('border','none');
+            function auto_resize(){
+                $('.pet_list_one_nr').height($('.pet_list_one_img').height());
+                // alert($('.pet_list_one_nr').height());
+            }
+            $('.pet_article_user').on('click',function(){
+                if($('.pet_article_user_info_tab').hasClass('pet_article_user_info_tab_show')){
+                    $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_show').addClass('pet_article_user_info_tab_cloes');
+                }else{
+                    $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_cloes').addClass('pet_article_user_info_tab_show');
+                }
+            });
+
+            $('.pet_head_gd_ico').on('click',function(){
+                $('.pet_more_list').addClass('pet_more_list_show');
+            });
+            $('.pet_more_close').on('click',function(){
+                $('.pet_more_list').removeClass('pet_more_list_show');
+            });
+        });
+
+    </script>
+</div>
+</body>
+</html>

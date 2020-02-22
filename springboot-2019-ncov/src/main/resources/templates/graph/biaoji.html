@@ -1,0 +1,571 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:javascript="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" th:href="@{/css/amazeui.min.css}">
+    <link rel="stylesheet" th:href="@{/css/wap.css}">
+    <title>疫情散点图</title>
+    <script type="text/javascript" th:src="@{/echarts/echarts.min.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/china.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body style="background:#ececec">
+<div class="pet_mian" >
+    <div class="pet_head">
+        <header data-am-widget="header"
+                class="am-header am-header-default pet_head_block">
+            <div class="am-header-left am-header-nav ">
+                <a href="javascript:history.back(-1)" class="iconfont pet_head_jt_ico">&#xe601;</a>
+            </div>
+
+            <h1 class="am-header-title pet_article_user">
+                <div class="pet_article_user_info_tab">
+                    <div class="pet_article_user_info_tab_font">
+                        <div class="pet_article_user_info_tab_font_triangle"></div>
+                        <div class="pet_article_user_info_tab_font_center"><i>文章</i><span>16篇</span></div>
+                        <!--         <div class="pet_article_user_info_tab_font_center"><i>涂鸦</i><span>89张</span></div>
+                                <div class="pet_article_user_info_tab_font_center_line"></div>
+                                <div class="pet_article_user_info_tab_font_center"><a href="###">查看全部资料</a></div> -->
+                    </div>
+                </div>
+                <span class="pet_article_user_ico"><img src="img/a1.png" alt="" class=""></span>
+                <span class="pet_article_user_name">全国省市趋势标记</span>
+            </h1>
+
+            <div class="am-header-right am-header-nav">
+                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>
+            </div>
+        </header>
+    </div>
+
+
+
+    <div class="pet_more_list"><div class="pet_more_list_block">
+        <div class="iconfont pet_more_close">×</div>
+        <div class="pet_more_list_block">
+            <div class="pet_more_list_block_name">
+                <div class="pet_more_list_block_name_title">阅读 Read</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe601;</i>
+                    <div class="pet_more_list_block_line_font">新鲜事</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe606;</i>
+                    <div class="pet_more_list_block_line_font">涨知识</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe607;</i>
+                    <div class="pet_more_list_block_line_font">看涂鸦</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe603;</i>
+                    <div class="pet_more_list_block_line_font">萌专题</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe611;</i>
+                    <div class="pet_more_list_block_line_font">百科</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe60c;</i>
+                    <div class="pet_more_list_block_line_font">问答</div>
+                </a>
+                <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe600;</i>
+                    <div class="pet_more_list_block_line_font">美容</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe602;</i>
+                    <div class="pet_more_list_block_line_font">医院</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe604;</i>
+                    <div class="pet_more_list_block_line_font">店铺</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sy pet_more_list_block_line_ico">&#xe610;</i>
+                    <div class="pet_more_list_block_line_font">摄影</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xx pet_more_list_block_line_ico">&#xe612;</i>
+                    <div class="pet_more_list_block_line_font">学校</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sz pet_more_list_block_line_ico">&#xe60f;</i>
+                    <div class="pet_more_list_block_line_font">水族</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_ms pet_more_list_block_line_ico">&#xe60e;</i>
+                    <div class="pet_more_list_block_line_font">猫舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qs pet_more_list_block_line_ico">&#xe60b;</i>
+                    <div class="pet_more_list_block_line_font">犬舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qt pet_more_list_block_line_ico">&#xe60d;</i>
+                    <div class="pet_more_list_block_line_font">其它</div>
+                </a>
+            </div>
+        </div>
+
+    </div></div>
+
+
+
+    <div class="pet_content">
+        <div class="pet_content_block">
+            <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+                <h1 class="pet_article_title">全国省份疫情分布散点图</h1>
+                <div class="pet_article_user_time">更新与：2020年2月22日</div>
+
+                <!--       =========================================                    地图      ===============================================                                             -->
+
+                <div id="main3" style="width: 100%;height:400%;text-align: center"></div>
+                <script type="text/javascript" th:inline="javascript">
+
+                    var myChart = echarts.init(document.getElementById('main3'));
+
+                    var name_title = "中国新型冠状病毒全国省市分布展示"
+                    var subname = '数据对接于天行数据API'
+                    var nameColor = " rgb(55, 75, 113)"
+                    var name_fontFamily = '等线'
+                    var subname_fontSize = 15
+                    var name_fontSize = 18
+                    var mapName = 'china'
+                    var data = [
+                        {name:"北京",value:177},
+                        {name:"天津",value:42},
+                        {name:"河北",value:102},
+                        {name:"山西",value:81},
+                        {name:"内蒙古",value:47},
+                        {name:"辽宁",value:67},
+                        {name:"吉林",value:82},
+                        {name:"黑龙江",value:66},
+                        {name:"上海",value:24},
+                        {name:"江苏",value:92},
+                        {name:"浙江",value:114},
+                        {name:"安徽",value:109},
+                        {name:"福建",value:116},
+                        {name:"江西",value:91},
+                        {name:"山东",value:119},
+                        {name:"河南",value:137},
+                        {name:"湖北",value:116},
+                        {name:"湖南",value:114},
+                        {name:"重庆",value:91},
+                        {name:"四川",value:125},
+                        {name:"贵州",value:62},
+                        {name:"云南",value:83},
+                        {name:"西藏",value:9},
+                        {name:"陕西",value:80},
+                        {name:"甘肃",value:56},
+                        {name:"青海",value:10},
+                        {name:"宁夏",value:18},
+                        {name:"新疆",value:67},
+                        {name:"广东",value:123},
+                        {name:"广西",value:59},
+                        {name:"海南",value:14},
+                    ];
+
+                    var geoCoordMap = {};
+                    var toolTipData = [
+                        {name:"北京",value:[{name:"确诊",value:95},{name:"治愈",value:82}]},
+                        {name:"天津",value:[{name:"确诊",value:22},{name:"治愈",value:20}]},
+                        {name:"河北",value:[{name:"确诊",value:60},{name:"治愈",value:42}]},
+                        {name:"山西",value:[{name:"确诊",value:40},{name:"治愈",value:41}]},
+                        {name:"内蒙古",value:[{name:"确诊",value:23},{name:"治愈",value:24}]},
+                        {name:"辽宁",value:[{name:"确诊",value:39},{name:"治愈",value:28}]},
+                        {name:"吉林",value:[{name:"确诊",value:41},{name:"治愈",value:41}]},
+                        {name:"黑龙江",value:[{name:"确诊",value:35},{name:"治愈",value:31}]},
+                        {name:"上海",value:[{name:"确诊",value:12},{name:"治愈",value:12}]},
+                        {name:"江苏",value:[{name:"确诊",value:47},{name:"治愈",value:45}]},
+                        {name:"浙江",value:[{name:"确诊",value:57},{name:"治愈",value:57}]},
+                        {name:"安徽",value:[{name:"确诊",value:57},{name:"治愈",value:52}]},
+                        {name:"福建",value:[{name:"确诊",value:59},{name:"治愈",value:57}]},
+                        {name:"江西",value:[{name:"确诊",value:49},{name:"治愈",value:42}]},
+                        {name:"山东",value:[{name:"确诊",value:67},{name:"治愈",value:52}]},
+                        {name:"河南",value:[{name:"确诊",value:69},{name:"治愈",value:68}]},
+                        {name:"湖北",value:[{name:"确诊",value:60},{name:"治愈",value:56}]},
+                        {name:"湖南",value:[{name:"确诊",value:62},{name:"治愈",value:52}]},
+                        {name:"重庆",value:[{name:"确诊",value:47},{name:"治愈",value:44}]},
+                        {name:"四川",value:[{name:"确诊",value:65},{name:"治愈",value:60}]},
+                        {name:"贵州",value:[{name:"确诊",value:32},{name:"治愈",value:30}]},
+                        {name:"云南",value:[{name:"确诊",value:42},{name:"治愈",value:41}]},
+                        {name:"西藏",value:[{name:"确诊",value:5},{name:"治愈",value:4}]},
+                        {name:"陕西",value:[{name:"确诊",value:38},{name:"治愈",value:42}]},
+                        {name:"甘肃",value:[{name:"确诊",value:28},{name:"治愈",value:28}]},
+                        {name:"青海",value:[{name:"确诊",value:5},{name:"治愈",value:5}]},
+                        {name:"宁夏",value:[{name:"确诊",value:10},{name:"治愈",value:8}]},
+                        {name:"新疆",value:[{name:"确诊",value:36},{name:"治愈",value:31}]},
+                        {name:"广东",value:[{name:"确诊",value:63},{name:"治愈",value:60}]},
+                        {name:"广西",value:[{name:"确诊",value:29},{name:"治愈",value:30}]},
+                        {name:"海南",value:[{name:"确诊",value:8},{name:"治愈",value:6}]},
+                    ];
+
+                    /*获取地图数据*/
+                    myChart.showLoading();
+                    var mapFeatures = echarts.getMap(mapName).geoJson.features;
+                    myChart.hideLoading();
+                    mapFeatures.forEach(function(v) {
+                        // 地区名称
+                        var name = v.properties.name;
+                        // 地区经纬度
+                        geoCoordMap[name] = v.properties.cp;
+
+                    });
+
+                    // console.log("============geoCoordMap===================")
+                    // console.log(geoCoordMap)
+                    // console.log("================data======================")
+                    console.log(data)
+                    console.log(toolTipData)
+                    var max = 480,
+                        min = 9; // todo
+                    var maxSize4Pin = 100,
+                        minSize4Pin = 20;
+
+                    var convertData = function(data) {
+                        var res = [];
+                        for (var i = 0; i < data.length; i++) {
+                            var geoCoord = geoCoordMap[data[i].name];
+                            if (geoCoord) {
+                                res.push({
+                                    name: data[i].name,
+                                    value: geoCoord.concat(data[i].value),
+                                });
+                            }
+                        }
+                        return res;
+                    };
+                    option = {
+                        title: {
+                            text: name_title,
+                            subtext: subname,
+                            x: 'center',
+                            textStyle: {
+                                color: nameColor,
+                                fontFamily: name_fontFamily,
+                                fontSize: name_fontSize
+                            },
+                            subtextStyle:{
+                                fontSize:subname_fontSize,
+                                fontFamily:name_fontFamily
+                            }
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: function(params) {
+                                if (typeof(params.value)[2] == "undefined") {
+                                    var toolTiphtml = ''
+                                    for(var i = 0;i<toolTipData.length;i++){
+                                        if(params.name==toolTipData[i].name){
+                                            toolTiphtml += toolTipData[i].name+':<br>'
+                                            for(var j = 0;j<toolTipData[i].value.length;j++){
+                                                toolTiphtml+=toolTipData[i].value[j].name+':'+toolTipData[i].value[j].value+"<br>"
+                                            }
+                                        }
+                                    }
+                                    console.log(toolTiphtml)
+                                    // console.log(convertData(data))
+                                    return toolTiphtml;
+                                } else {
+                                    var toolTiphtml = ''
+                                    for(var i = 0;i<toolTipData.length;i++){
+                                        if(params.name==toolTipData[i].name){
+                                            toolTiphtml += toolTipData[i].name+':<br>'
+                                            for(var j = 0;j<toolTipData[i].value.length;j++){
+                                                toolTiphtml+=toolTipData[i].value[j].name+':'+toolTipData[i].value[j].value+"<br>"
+                                            }
+                                        }
+                                    }
+                                    console.log(toolTiphtml)
+                                    // console.log(convertData(data))
+                                    return toolTiphtml;
+                                }
+                            }
+                        },
+                        // legend: {
+                        //     orient: 'vertical',
+                        //     y: 'bottom',
+                        //     x: 'right',
+                        //     data: ['credit_pm2.5'],
+                        //     textStyle: {
+                        //         color: '#fff'
+                        //     }
+                        // },
+                        visualMap: {
+                            show: true,
+                            min: 0,
+                            max: 100000,
+                            left: 'left',
+                            top: 'bottom',
+                            text: ['高', '低'], // 文本，默认为数值文本
+                            calculable: true,
+                            seriesIndex: [1],
+                            inRange: {
+                                // color: ['#3B5077', '#031525'] // 蓝黑
+                                // color: ['#ffc0cb', '#800080'] // 红紫
+                                // color: ['#3C3B3F', '#605C3C'] // 黑绿
+                                // color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
+                                // color: ['#23074d', '#cc5333'] // 紫红
+                                color: ['#00467F', '#A5CC82'] // 蓝绿
+                                // color: ['#1488CC', '#2B32B2'] // 浅蓝
+                                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                                // color: ['#00467F', '#A5CC82'] // 蓝绿
+
+                            }
+                        },
+                        /*工具按钮组*/
+                        // toolbox: {
+                        //     show: true,
+                        //     orient: 'vertical',
+                        //     left: 'right',
+                        //     top: 'center',
+                        //     feature: {
+                        //         dataView: {
+                        //             readOnly: false
+                        //         },
+                        //         restore: {},
+                        //         saveAsImage: {}
+                        //     }
+                        // },
+                        geo: {
+                            show: true,
+                            map: mapName,
+                            label: {
+                                normal: {
+                                    show: false
+                                },
+                                emphasis: {
+                                    show: false,
+                                }
+                            },
+                            roam: true,
+                            itemStyle: {
+                                normal: {
+                                    areaColor: '#031525',
+                                    borderColor: '#3B5077',
+                                },
+                                emphasis: {
+                                    areaColor: '#2B91B7',
+                                }
+                            }
+                        },
+                        series: [{
+                            name: '散点',
+                            type: 'scatter',
+                            coordinateSystem: 'geo',
+                            data: convertData(data),
+                            symbolSize: function(val) {
+                                return val[2] / 10;
+                            },
+                            label: {
+                                normal: {
+                                    formatter: '{b}',
+                                    position: 'right',
+                                    show: true
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#05C3F9'
+                                }
+                            }
+                        },
+                            {
+                                type: 'map',
+                                map: mapName,
+                                geoIndex: 0,
+                                aspectScale: 0.75, //长宽比
+                                showLegendSymbol: false, // 存在legend时显示
+                                label: {
+                                    normal: {
+                                        show: true
+                                    },
+                                    emphasis: {
+                                        show: false,
+                                        textStyle: {
+                                            color: '#fff'
+                                        }
+                                    }
+                                },
+                                roam: true,
+                                itemStyle: {
+                                    normal: {
+                                        areaColor: '#031525',
+                                        borderColor: '#3B5077',
+                                    },
+                                    emphasis: {
+                                        areaColor: '#2B91B7'
+                                    }
+                                },
+                                animation: false,
+                                data: data
+                            },
+                            {
+                                name: '点',
+                                type: 'scatter',
+                                coordinateSystem: 'geo',
+                                symbol: 'pin', //气泡
+                                symbolSize: function(val) {
+                                    var a = (maxSize4Pin - minSize4Pin) / (max - min);
+                                    var b = minSize4Pin - a * min;
+                                    b = maxSize4Pin - a * max;
+                                    return a * val[2] + b;
+                                },
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        textStyle: {
+                                            color: '#fff',
+                                            fontSize: 9,
+                                        }
+                                    }
+                                },
+                                itemStyle: {
+                                    normal: {
+                                        color: '#F62157', //标志颜色
+                                    }
+                                },
+                                zlevel: 6,
+                                data: convertData(data),
+                            },
+                            {
+                                name: 'Top 5',
+                                type: 'effectScatter',
+                                coordinateSystem: 'geo',
+                                data: convertData(data.sort(function(a, b) {
+                                    return b.value - a.value;
+                                }).slice(0, 5)),
+                                symbolSize: function(val) {
+                                    return val[2] / 10;
+                                },
+                                showEffectOn: 'render',
+                                rippleEffect: {
+                                    brushType: 'stroke'
+                                },
+                                hoverAnimation: true,
+                                label: {
+                                    normal: {
+                                        formatter: '{b}',
+                                        position: 'right',
+                                        show: true
+                                    }
+                                },
+                                itemStyle: {
+                                    normal: {
+                                        color: 'yellow',
+                                        shadowBlur: 10,
+                                        shadowColor: 'yellow'
+                                    }
+                                },
+                                zlevel: 1
+                            },
+
+                        ]
+                    };
+
+
+                    myChart.setOption(option);
+                    //自适应大小
+                    window.addEventListener("resize",function () {
+                        myChart.resize();
+                    })
+
+                </script>
+
+
+
+
+
+
+
+
+
+
+                <ul class="like_share_block">
+                </ul>
+                <div class="pet_article_dowload">
+                    <div class="pet_article_dowload_title">关于Amaze UI</div>
+                    <div class="pet_article_dowload_content"><div class="pet_article_dowload_triangle"></div>
+                        <div class="pet_article_dowload_ico"><img src="img/footdon.png" alt=""></div>
+                        <div class="pet_article_dowload_content_font">
+                            Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
+                        </div>
+                        <div class="pet_article_dowload_all">
+                            <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>
+                            <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>
+                        </div>
+                    </div>
+                </div>
+            </article></div>
+
+        <div class="pet_article_like">
+
+
+
+            <div class="pet_content_main pet_article_like_delete">
+
+
+            </div>
+
+
+
+            <div class="pet_article_footer_info">Copyright(c)2015 Amaze UI All Rights Reserved</div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/amazeui.min.js}"></script>
+
+    <script>
+        $(function(){
+            // 动态计算优酷土豆QQ视频等视频引用尺寸问题
+            function auto_video(){
+                var iframe_width = $('article > embed').width();
+                $('article > embed').height(iframe_width/4*3);
+                $('article > embed').css({'display':'block','margin':'20px auto'});
+            }
+            // 动态计算新闻列表文字样式
+            auto_resize();
+            auto_video();
+            $(window).resize(function() {
+                auto_resize();
+                auto_video();
+            });
+            $('.am-list-thumb img').load(function(){
+                auto_resize();
+            });
+            $('.pet_article_like li:last-child').css('border','none');
+            function auto_resize(){
+                $('.pet_list_one_nr').height($('.pet_list_one_img').height());
+                // alert($('.pet_list_one_nr').height());
+            }
+            $('.pet_article_user').on('click',function(){
+                if($('.pet_article_user_info_tab').hasClass('pet_article_user_info_tab_show')){
+                    $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_show').addClass('pet_article_user_info_tab_cloes');
+                }else{
+                    $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_cloes').addClass('pet_article_user_info_tab_show');
+                }
+            });
+
+            $('.pet_head_gd_ico').on('click',function(){
+                $('.pet_more_list').addClass('pet_more_list_show');
+            });
+            $('.pet_more_close').on('click',function(){
+                $('.pet_more_list').removeClass('pet_more_list_show');
+            });
+        });
+
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script type="text/javascript" th:src="@{/echarts/echarts.min.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/china.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/jquery-1.11.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script type="text/javascript" th:src="@{/js2/jquery-1.8.0.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/amazeui.min.css}">
+    <link rel="stylesheet" th:href="@{/css/wap.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <title>首页</title>
+</head>
+<body>
+<div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
+    <a href="#top" title="">
+        <img class="am-gotop-icon-custom" th:src="@{/img/goTop.png}" />
+    </a>
+</div>
+
+<div class="pet_mian" id="top" style="height: 200px">
+  <div data-am-widget="slider"  class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}' >
+  <ul class="am-slides">
+      <li>
+            <img th:src="@{/img/001.png}">
+            <div class="pet_slider_font">
+                <span class="pet_slider_emoji"> (╭￣3￣)╭♡   </span>
+                <span>武汉加油！！！中国加油！！！</span>
+            </div>
+            <div class="pet_slider_shadow"></div>
+      </li>
+      <li>
+            <img th:src="@{/img/002.png}">
+            <div class="pet_slider_font">
+                <span class="pet_slider_emoji"> []~(￣▽￣)~*　</span>
+                <span>清除病毒，扫除恶魔！！！！！</span>
+            </div>
+            <div class="pet_slider_shadow"></div>
+      </li>
+      <li>
+            <img th:src="@{/img/003.png}">
+            <div class="pet_slider_font">
+                <span class="pet_slider_emoji"> (｡・`ω´･)　</span>
+                <span>加油武汉！！！！！！</span>
+            </div>
+            <div class="pet_slider_shadow"></div>
+      </li>
+  </ul>
+</div>
+
+
+<div class="pet_circle_nav">
+    <ul class="pet_circle_nav_list">
+        <li><a th:href="@{/toNews}" class="iconfont pet_nav_xinxianshi ">&#xe61e;</a><span>实时播报</span></li>
+        <li><a th:href="@{/findRumor}" class="iconfont pet_nav_zhangzhishi ">&#xe607;</a><span>辟谣防护</span></li>
+        <li><a th:href="@{/knowledge}" class="iconfont pet_nav_kantuya ">&#xe62c;</a><span>肺炎知识</span></li>
+        <li><a th:href="@{/getSurrounding}" class="iconfont pet_nav_mengzhuanti ">&#xe622;</a><span>周边疫情</span></li>
+        <li><a th:href="@{/getBigDataUI}" class="iconfont pet_nav_meirong ">&#xe629;</a><span>大数据展图</span></li>
+        <li><a th:href="@{/toDoctor}" class="iconfont pet_nav_yiyuan ">&#xe602;</a><span>疫情事迹</span></li>
+        <li><a href="" class="iconfont pet_nav_dianpu ">&#xe604;</a><span>讨论</span></li>
+        <li><a href="javascript:;" class="iconfont pet_nav_gengduo ">&#xe600;</a><span>更多</span></li>
+    </ul>
+    <div class="pet_more_list"><div class="pet_more_list_block">
+        <div class="iconfont pet_more_close">×</div>
+        <div class="pet_more_list_block">
+            <div class="pet_more_list_block_name">
+                <div class="pet_more_list_block_name_title">阅读 Read</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe61e;</i>
+                    <div class="pet_more_list_block_line_font">新鲜事</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe607;</i>
+                    <div class="pet_more_list_block_line_font">趣闻</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe62c;</i>
+                    <div class="pet_more_list_block_line_font">阅读</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe622;</i>
+                    <div class="pet_more_list_block_line_font">专题</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe629;</i>
+                    <div class="pet_more_list_block_line_font">订阅</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
+                    <div class="pet_more_list_block_line_font">专栏</div>
+                </a>
+                <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe61e;</i>
+                    <div class="pet_more_list_block_line_font">新鲜事</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe607;</i>
+                    <div class="pet_more_list_block_line_font">趣闻</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe62c;</i>
+                    <div class="pet_more_list_block_line_font">阅读</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe622;</i>
+                    <div class="pet_more_list_block_line_font">专题</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe629;</i>
+                    <div class="pet_more_list_block_line_font">订阅</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
+                    <div class="pet_more_list_block_line_font">专栏</div>
+                </a>
+            </div>
+        </div>
+
+    </div></div>
+</div>
+
+    <div class="pet_content_main">
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <div class="am-list-news-bd">
+                <ul class="am-list">
+
+                    <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+                        <h1 class="pet_article_title">全国疫情实时数据动态</h1>
+                        <div class="pet_article_user_time pet_hd_con_time"><i class="iconfont">&#xe617;</i><span style="color: black" th:text="'截止到'+${updateTime}+'全国数据统计'">2015年10月26日 9:00 ～ 2015年10月28日 17:30</span></div>
+                        <div class="pet_article_user_time pet_hd_con_map"><i class="iconfont">&#xe632;</i>北京市</div>
+                        <div class="pet_hd_con_gp">
+                            <div class="pet_hd_con_gp_title">今日全国数据</div>
+
+                            <button class="pet_hd_con_gp_list_xl_m" th:text="'现存确诊:'+${getCurrentConfirmedSum}">购买坐席:15693</button>
+                            <button style="background-color: #FF4500" class="pet_hd_con_gp_list_xl_m" th:text="'确诊:'+${getConfirmedSum}">购买坐席:1236</button>
+                            <button style="background-color: green" class="pet_hd_con_gp_list_xl_m" th:text="'治愈:'+${getCuredSum}">购买坐席:2365</button>
+                            <button style="background-color: #708090" class="pet_hd_con_gp_list_xl_m" th:text="'死亡:'+${getDeadSum}">购买坐席:6395</button>
+
+                            <div class="pet_hd_con_gp_list">
+                                <div class="pet_hd_con_gp_list_sm"><i>数据来源</i> - 说明：定时更新同步于丁香数据、腾讯数据、天行数据API。</div>
+                            </div>
+
+                        </div>
+                    </article>
+
+
+
+                    <h1 class="pet_article_title">全国省市疫情展示</h1>
+                    <li>
+                        <div id="main" style="width: 100%;height:400%;text-align: center"></div>
+
+                        <script type="text/javascript" th:inline="javascript">
+                            var beijingshi = [[${beijingshi}]];
+                            var tianjin = [[${tianjin}]];
+                            var shanghai = [[${shanghai}]];
+                            var chongqing = [[${chongqing}]];
+                            var yunnan = [[${yunnan}]];
+                            var hebei = [[${hebei}]];
+                            var henan = [[${henan}]];
+                            var liaoning = [[${liaoning}]];
+                            var heilongjiang = [[${heilongjiang}]];
+                            var hunan = [[${hunan}]];
+                            var anhui = [[${anhui}]];
+                            var shandong = [[${shandong}]];
+                            var xinjiang = [[${xinjiang}]];
+                            var jiangsu = [[${jiangsu}]];
+                            var zhejiang = [[${zhejiang}]];
+                            var jiangxi = [[${jiangxi}]];
+                            var hubei = [[${hubei}]];
+                            var guangxi = [[${guangxi}]];
+                            var gansu = [[${gansu}]];
+                            var shanxi = [[${shanxi}]];
+                            var shanxi2 = [[${shanxi2}]];
+                            var jilin = [[${jilin}]];
+                            var fujian = [[${fujian}]];
+                            var guizhou = [[${guizhou}]];
+                            var guangdong = [[${guangdong}]];
+                            var qinghai = [[${qinghai}]];
+                            var xizang = [[${xizang}]];
+                            var sichuan = [[${sichuan}]];
+                            var ningxia = [[${ningxia}]];
+                            var hainan = [[${hainan}]];
+                            var taiwan = [[${taiwan}]];
+                            var xianggang = [[${xianggang}]];
+                            var aomen = [[${aomen}]];
+                            var neimenggu = [[${neimenggu}]];
+
+
+
+                            function randomData() {
+                                return Math.round(Math.random()*500);
+                            }
+
+                            var mydata = [
+                                {name: '北京',value: beijingshi },{name: '天津',value: tianjin },
+                                {name: '上海',value: shanghai },{name: '重庆',value: chongqing },
+                                {name: '河北',value: hebei },{name: '河南',value: henan },
+                                {name: '云南',value: yunnan },{name: '辽宁',value: liaoning },
+                                {name: '黑龙江',value: heilongjiang },{name: '湖南',value: hainan },
+                                {name: '安徽',value: anhui },{name: '山东',value: shandong },
+                                {name: '新疆',value: xinjiang },{name: '江苏',value: jiangsu },
+                                {name: '浙江',value: zhejiang },{name: '江西',value: jiangxi },
+                                {name: '湖北',value: hubei },{name: '广西',value: guangxi },
+                                {name: '甘肃',value: gansu },{name: '山西',value: shanxi },
+                                {name: '内蒙古',value: neimenggu },{name: '陕西',value: shanxi2 },
+                                {name: '吉林',value: jilin },{name: '福建',value: fujian },
+                                {name: '贵州',value: guizhou },{name: '广东',value: guangdong },
+                                {name: '青海',value: qinghai },{name: '西藏',value: xizang },
+                                {name: '四川',value: sichuan },{name: '宁夏',value: ningxia },
+                                {name: '海南',value: hainan },{name: '台湾',value: taiwan },
+                                {name: '香港',value: xianggang },{name: '澳门',value: aomen }
+                            ];
+                            var optionMap = {
+                                backgroundColor: '#FFFFFF',
+                                title: {
+                                    text: '全国地图大数据',
+                                    subtext: '',
+                                    x:'center'
+                                },
+                                tooltip : {
+                                    trigger: 'item'
+                                },
+
+                                //左侧小导航图标
+                                visualMap: {
+                                    show : true,
+                                    x: 'left',
+                                    y: 'center',
+                                    splitList: [
+                                        {start: 10000, end:100000},{start: 1000, end: 10000},
+                                        {start: 100, end: 499},{start: 500, end: 999},
+                                        {start: 10, end: 99},{start: 1, end: 9},{start: 0, end: 0},
+                                    ],
+                                    color: ['#990000', '#993300', '#FF6633','#FF3300', '#FF6600','#FFFF99', '#FFFFFF']
+                                },
+
+                                //配置属性
+                                series: [{
+                                    name: '现存确诊:',
+                                    type: 'map',
+                                    mapType: 'china',
+                                    roam: true,
+                                    label: {
+                                        normal: {
+                                            show: true  //省份名称
+                                        },
+                                        emphasis: {
+                                            show: true
+                                        }
+                                    },
+                                    data:mydata  //数据
+                                }]
+
+                            };
+
+                            //初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('main'));
+                            myChart.on('click',function (params) {
+                                //window.alert('这是：'+ (params.name));
+                                // $.get("url","data",function (data) {
+                                // 	alert(data);
+                                // },"type");
+                            });
+                            //使用制定的配置项和数据显示图表
+                            myChart.setOption(optionMap);
+                            //自适应大小
+                            window.addEventListener("resize",function () {
+                                myChart.resize();
+                            })
+                        </script>
+                    </li>
+                </ul>
+
+<!--表表表-->
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>省份</th>
+                <th>当前确诊</th>
+                <th>确诊</th>
+                <th>死亡</th>
+                <th>治愈</th>
+            </tr>
+            </thead>
+        </table>
+        <div class="dropdown" th:each="provinceList : ${provinceList}">
+            <button th:text="${provinceList.province}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${provinceList.currentConfirmedCount}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${provinceList.confirmedCount}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${provinceList.deadCount}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${provinceList.curedCount}" type="button" style="width:100%" class="btn dropdown-toggle" id="dropdownMenu1"
+                    data-toggle="dropdown">
+                主题
+                <span class="caret"></span>
+            </button>
+            <ul   class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <div th:each="cityList : ${cityList}">
+                    <li th:if="${cityList.province_id}==${provinceList.province}"  th:text="${cityList.city_id}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${cityList.currentConfirmedCount}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${cityList.confirmedCount}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${cityList.deadCount}+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${cityList.curedCount}" role="presentation">
+                        java
+                    </li>
+                </div>
+
+            </ul>
+        </div>
+
+
+
+        <ul class="like_share_block">
+            <li><a class="link_share_button" href="###"><i class="iconfont share_ico_link">&#xe62f;</i>1460</a></li>
+            <li><a class="link_share_button" href="###"><i class="iconfont share_ico_wx">&#xe630;</i>微信</a></li>
+            <li><a class="link_share_button" href="###"><i class="iconfont share_ico_pyq">&#xe62e;</i>朋友圈</a></li>
+        </ul>
+    </div>
+            <div class="pet_article_footer_info">Copyright(c)2020 wang All Rights Reserved</div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<script type="text/javascript" th:src="@{/js2/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js2/vue.min.js}"></script>
+<script type="text/javascript" th:src="@{/js2/index.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/amazeui.min.js}"></script>
+<script>
+    $(function(){
+
+        // 动态计算新闻列表文字样式
+        auto_resize();
+        $(window).resize(function() {
+            auto_resize();
+        });
+        $('.am-list-thumb img').load(function(){
+            auto_resize();
+        });
+        $('.pet_article_like li:last-child').css('border','none');
+        function auto_resize(){
+            $('.pet_list_one_nr').height($('.pet_list_one_img').height());
+            // alert($('.pet_list_one_nr').height());
+        }
+        $('.pet_article_user').on('click',function(){
+            if($('.pet_article_user_info_tab').hasClass('pet_article_user_info_tab_show')){
+                $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_show').addClass('pet_article_user_info_tab_cloes');
+            }else{
+                $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_cloes').addClass('pet_article_user_info_tab_show');
+            }
+        });
+
+        $('.pet_head_gd_ico').on('click',function(){
+            $('.pet_more_list').addClass('pet_more_list_show');
+        });
+        $('.pet_more_close').on('click',function(){
+            $('.pet_more_list').removeClass('pet_more_list_show');
+        });
+    });
+
+</script>
+</body>
+</html>

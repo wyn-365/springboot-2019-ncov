@@ -1,0 +1,861 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" th:href="@{/css/amazeui.min.css}">
+    <link rel="stylesheet" th:href="@{/css/wap.css}">
+    <title>疫情预测趋势</title>
+    <script type="text/javascript" th:src="@{/echarts/echarts.min.js}"></script>
+    <script type="text/javascript" th:src="@{/echarts/china.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body style="background:#ececec">
+<div class="pet_mian" >
+    <div class="pet_head">
+        <header data-am-widget="header"
+                class="am-header am-header-default pet_head_block">
+            <div class="am-header-left am-header-nav ">
+                <a href="javascript:history.back(-1)" class="iconfont pet_head_jt_ico">&#xe601;</a>
+            </div>
+
+            <h1 class="am-header-title pet_article_user">
+                <div class="pet_article_user_info_tab">
+                    <div class="pet_article_user_info_tab_font">
+                        <div class="pet_article_user_info_tab_font_triangle"></div>
+                        <div class="pet_article_user_info_tab_font_center"><i>文章</i><span>16篇</span></div>
+                        <!--         <div class="pet_article_user_info_tab_font_center"><i>涂鸦</i><span>89张</span></div>
+                                <div class="pet_article_user_info_tab_font_center_line"></div>
+                                <div class="pet_article_user_info_tab_font_center"><a href="###">查看全部资料</a></div> -->
+                    </div>
+                </div>
+                <span class="pet_article_user_ico"><img src="img/a1.png" alt="" class=""></span>
+                <span class="pet_article_user_name">湖北省人员流动</span>
+            </h1>
+
+            <div class="am-header-right am-header-nav">
+                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>
+            </div>
+        </header>
+    </div>
+
+
+
+    <div class="pet_more_list"><div class="pet_more_list_block">
+        <div class="iconfont pet_more_close">×</div>
+        <div class="pet_more_list_block">
+            <div class="pet_more_list_block_name">
+                <div class="pet_more_list_block_name_title">阅读 Read</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe601;</i>
+                    <div class="pet_more_list_block_line_font">新鲜事</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe606;</i>
+                    <div class="pet_more_list_block_line_font">涨知识</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe607;</i>
+                    <div class="pet_more_list_block_line_font">看涂鸦</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe603;</i>
+                    <div class="pet_more_list_block_line_font">萌专题</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe611;</i>
+                    <div class="pet_more_list_block_line_font">百科</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe60c;</i>
+                    <div class="pet_more_list_block_line_font">问答</div>
+                </a>
+                <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe600;</i>
+                    <div class="pet_more_list_block_line_font">美容</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe602;</i>
+                    <div class="pet_more_list_block_line_font">医院</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe604;</i>
+                    <div class="pet_more_list_block_line_font">店铺</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sy pet_more_list_block_line_ico">&#xe610;</i>
+                    <div class="pet_more_list_block_line_font">摄影</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_xx pet_more_list_block_line_ico">&#xe612;</i>
+                    <div class="pet_more_list_block_line_font">学校</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_sz pet_more_list_block_line_ico">&#xe60f;</i>
+                    <div class="pet_more_list_block_line_font">水族</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_ms pet_more_list_block_line_ico">&#xe60e;</i>
+                    <div class="pet_more_list_block_line_font">猫舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qs pet_more_list_block_line_ico">&#xe60b;</i>
+                    <div class="pet_more_list_block_line_font">犬舍</div>
+                </a>
+                <a class="pet_more_list_block_line">
+                    <i class="iconfont pet_nav_qt pet_more_list_block_line_ico">&#xe60d;</i>
+                    <div class="pet_more_list_block_line_font">其它</div>
+                </a>
+            </div>
+        </div>
+
+    </div></div>
+
+
+
+    <div class="pet_content">
+        <div class="pet_content_block">
+            <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
+                <h1 class="pet_article_title">湖北人员流动</h1>
+                <div class="pet_article_user_time">发表于：2020-1-22</div>
+
+                <!--       =========================================                    地图      ===============================================                                             -->
+
+                <div id="main1" style="width: 100%;height:400%;text-align: center"></div>
+                <script type="text/javascript">
+                    // function randomData() {
+                    //     return Math.round(Math.random()*500);
+                    // }
+                    var geoCoordMap = {
+                        '新疆': [86.61 , 40.79],
+                        '西藏':[89.13 , 30.66],
+                        '黑龙江':[128.34 , 47.05],
+                        '吉林':[126.32 , 43.38],
+                        '辽宁':[123.42 , 41.29],
+                        '内蒙古':[112.17 , 42.81],
+                        '北京':[116.40 , 40.40 ],
+                        '宁夏':[106.27 , 36.76],
+                        '山西':[111.95,37.65],
+                        '河北':[115.21 , 38.44],
+                        '天津':[117.04 , 39.52],
+                        '青海':[97.07 , 35.62],
+                        '甘肃':[103.82 , 36.05],
+                        '山东':[118.01 , 36.37],
+                        '陕西':[108.94 , 34.46],
+                        '河南':[113.46 , 34.25],
+                        '安徽':[117.28 , 31.86],
+                        '江苏':[120.26 , 32.54],
+                        '上海':[121.46 , 31.28],
+                        '四川':[103.36 , 30.65],
+                        '湖北':[112.29 , 30.98],
+                        '浙江':[120.15 , 29.28],
+                        '重庆':[107.51 , 29.63],
+                        '湖南':[112.08 , 27.79],
+                        '江西':[115.89 , 27.97],
+                        '贵州':[106.91 , 26.67],
+                        '福建':[118.31 , 26.07],
+                        '云南':[101.71 , 24.84],
+                        '台湾':[121.01 , 23.54],
+                        '广西':[108.67 , 23.68],
+                        '广东':[113.98 , 22.82],
+                        '海南':[110.03 , 19.33],
+                        '澳门':[113.54 , 22.19],
+                        '香港':[114.17 , 22.32],
+                    };
+                    var BJData=[
+                        [
+                            {name: '湖北'},
+                            {name: '湖北'}
+                        ],
+                        [
+                            {name: '湖北'},
+                            {name: '新疆', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '西藏', value: 100}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '黑龙江', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '吉林', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '辽宁', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '内蒙古', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '北京', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '宁夏', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '山西', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '河北', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '天津', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '青海', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '甘肃', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '山东', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '陕西', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '河南', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '安徽', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '江苏', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '上海', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '四川', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '浙江', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '重庆', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '湖南', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '江西', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '贵州', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '福建', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '云南', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '台湾', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '广西', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '广东', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '海南', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '澳门', value: 200}
+                        ],
+                        [
+                            {name: '湖北'}, {name: '香港', value: 200}
+                        ],
+                    ];
+                    var planePath = 'path://M.6,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705';
+                    var convertData = function(data) {
+                        var res = [];
+                        for (var i = 0; i < data.length; i++) {
+                            var dataItem = data[i];
+                            var fromCoord = geoCoordMap[dataItem[0].name];
+                            var toCoord = geoCoordMap[dataItem[1].name];
+                            if (fromCoord && toCoord) {
+                                res.push([{
+                                    coord: fromCoord
+                                }, {
+                                    coord: toCoord
+                                }]);
+                            }
+                        }
+                        return res;
+                    };
+
+                    var color = ['#3ed4ff', '#ffa022', '#a6c84c'];
+                    var series = [];
+                    [
+                        ['湖北', BJData],
+                    ].forEach(function(item, i) {
+                        series.push({
+                            name: item[0] + ' Top10',
+                            type: 'lines',
+                            zlevel: 1,
+                            effect: {
+                                show: true,
+                                period: 6,
+                                trailLength: 0.7,
+                                color: '#fff',
+                                symbolSize: 3
+                            },
+                            lineStyle: {
+                                normal: {
+                                    color: color[i],
+                                    width: 0,
+                                    curveness: 0.2
+                                }
+                            },
+                            data: convertData(item[1])
+                        }, {
+                            name: item[0] + ' 出境人数：15635人' ,
+                            type: 'lines',
+                            zlevel: 2,
+                            effect: {
+                                show: true,
+                                period: 6,
+                                trailLength: 0,
+                                symbol: planePath,
+                                symbolSize: 15
+                            },
+                            lineStyle: {
+                                normal: {
+                                    color: color[i],
+                                    width: 1,
+                                    opacity: 0.4,
+                                    curveness: 0.2
+                                }
+                            },
+                            data: convertData(item[1])
+                        }, {
+                            name: item[0] + ' Top10',
+                            type: 'effectScatter',
+                            coordinateSystem: 'geo',
+                            zlevel: 2,
+                            rippleEffect: {
+                                brushType: 'stroke'
+                            },
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'right',
+                                    formatter: '{b}'
+                                }
+                            },
+                            symbolSize: function() {
+                                return 5;
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: color[i]
+                                }
+                            },
+                            data: item[1].map(function(dataItem) {
+                                return {
+                                    name: dataItem[1].name,
+                                    value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
+                                };
+                            })
+                        });
+                    });
+
+                    var mapOption ={
+                        tooltip:{
+                            trigger: 'item'
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            top: 'bottom',
+                            left: 'right',
+                            data: ['北京 Top10', '上海 Top10', '广东 Top10'],
+                            textStyle: {
+                                color: '#fff'
+                            },
+                            selectedMode: 'single'
+                        },
+                        geo: {
+                            map: 'china',
+                            label: {
+                                emphasis: {
+                                    show: false
+                                }
+                            },
+                            roam: true,
+                            itemStyle: {
+                                normal: {
+                                    areaColor: '#132937',
+                                    borderColor: '#0692a4'
+                                },
+                                emphasis: {
+                                    areaColor: '#0b1c2d'
+                                }
+                            }
+                        },
+                        series: series
+                    };
+                    var myChart = echarts.init(document.getElementById('main1'));
+                    myChart.setOption(mapOption);
+                    //自适应大小
+                    window.addEventListener("resize",function () {
+                        myChart.resize();
+                    })
+                </script>
+
+                <p>新华社武汉1月22日消息，加强流动人员管理、交通枢纽设体温检测点、对来自疫区的人员进行健康登记……为全力应对新型冠状病毒感染的肺炎疫情，湖北省目前采取多种举措加强社会面防控。
+                </p>
+                <p>据了解，按照湖北省启动突发公共卫生事件II级应急响应后的相关部署，湖北将加强流动人员管理，省内所有机场、车站、码头等交通枢纽均设体温检测点，对所有进站人员实行体温检测，并做好健康登记；对检测发现有疑似症状的人员，实施临时隔离留验，并向地方卫生健康行政部门指定的医疗机构移交；城乡基层组织要对来自疫区的返乡人员和外来人员逐一进行健康登记，及时跟踪观察其健康状况，发现发热、咳嗽等情况应立即报告。</p>
+                </article>
+            <ul class="like_share_block">
+                <li><a class="link_share_button" href="###"><i class="iconfont share_ico_link">&#xe62f;</i>1460</a></li>
+                <li><a class="link_share_button" href="###"><i class="iconfont share_ico_wx">&#xe630;</i>微信</a></li>
+                <li><a class="link_share_button" href="###"><i class="iconfont share_ico_pyq">&#xe62e;</i>朋友圈</a></li>
+            </ul>
+            <div class="pet_article_dowload">
+                <div class="pet_article_dowload_title">关于Amaze UI</div>
+                <div class="pet_article_dowload_content"><div class="pet_article_dowload_triangle"></div>
+                    <div class="pet_article_dowload_ico"><img src="img/footdon.png" alt=""></div>
+                    <div class="pet_article_dowload_content_font">
+                        Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
+                    </div>
+                    <div class="pet_article_dowload_all">
+                        <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>
+                        <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pet_comment_list">
+            <div class="pet_comment_list_wap"><div class="pet_comment_list_title">精彩评论</div>
+
+                <div data-am-widget="tabs" class="am-tabs am-tabs-default pet_comment_list_tab" >
+                    <ul class="am-tabs-nav am-cf pet_comment_list_title_tab">
+                        <li class="am-active"><a href="[data-tab-panel-0]">人气</a></li>
+                        <li class=""><a href="[data-tab-panel-1]">最新</a></li>
+                        <li class=""><a href="[data-tab-panel-2]">最早</a></li>
+                    </ul>
+                    <div class="am-tabs-bd pet_pl_list">
+                        <div data-tab-panel-0 class="am-tab-panel am-active">
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a1.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">Amaze</div>
+                                    <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">10分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a2.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">一如既往</div>
+                                    <div class="pet_comment_list_block_r_text"><span>@Drary</span>没有老友你的陪伴，日子真是漫长与你重逢之时，我会敞开心扉倾诉所有。</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">15分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a3.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">AllThe</div>
+                                    <div class="pet_comment_list_block_r_text">表紙の裏に移らないよに あけた一枚目のページの裏に透けた文字めくろうとして 指がとまって</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">30分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab-panel-1 class="am-tab-panel ">
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a1.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">Amaze</div>
+                                    <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">10分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a2.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">一如既往</div>
+                                    <div class="pet_comment_list_block_r_text"><span>@Drary</span>没有老友你的陪伴，日子真是漫长与你重逢之时，我会敞开心扉倾诉所有。</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">15分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a3.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">AllThe</div>
+                                    <div class="pet_comment_list_block_r_text">表紙の裏に移らないよに あけた一枚目のページの裏に透けた文字めくろうとして 指がとまって</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">30分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab-panel-2 class="am-tab-panel ">
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a1.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">Amaze</div>
+                                    <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">10分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a2.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">一如既往</div>
+                                    <div class="pet_comment_list_block_r_text"><span>@Drary</span>没有老友你的陪伴，日子真是漫长与你重逢之时，我会敞开心扉倾诉所有。</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">15分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pet_comment_list_block">
+                                <div class="pet_comment_list_block_l"><img src="img/a3.png" alt=""></div>
+                                <div class="pet_comment_list_block_r">
+                                    <div class="pet_comment_list_block_r_info">AllThe</div>
+                                    <div class="pet_comment_list_block_r_text">表紙の裏に移らないよに あけた一枚目のページの裏に透けた文字めくろうとして 指がとまって</div>
+                                    <div class="pet_comment_list_block_r_bottom">
+                                        <div class="pet_comment_list_bottom_info_l">30分钟前</div>
+                                        <div class="pet_comment_list_bottom_info_r">
+                                            <span><i class="iconfont">&#xe631;</i>5 </span>
+                                            <span> 回复</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="pet_article_like">
+            <div class="pet_article_like_title">猜你喜欢</div>
+
+
+
+            <div class="pet_content_main pet_article_like_delete">
+                <div data-am-widget="list_news" class="am-list-news am-list-news-default am-no-layout">
+                    <div class="am-list-news-bd">
+                        <ul class="am-list">
+                            <!--缩略图在标题右边-->
+                            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-right pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_l">
+                                        <div class="pet_list_one_info_ico"><img src="img/a1.png" alt=""></div>
+                                        <div class="pet_list_one_info_name">Super invincible 菁 </div>
+                                    </div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_list_tag_xxs">新鲜事</div>
+                                    </div>
+                                </div>
+                                <div class=" am-u-sm-8 am-list-main pet_list_one_nr">
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="###" class="">十一长假哪也不去，宅在家里看电影！</a></h3>
+                                    <div class="am-list-item-text pet_list_one_text">每逢长假，总有那么一群人选择远离人山人海，静静地呆在家，坐在电脑电视前。长时间的工作学习让他们感觉很疲惫，对什么都提不起劲，打开电脑却不知道干什么好…</div>
+
+                                </div>
+                                <div class="am-u-sm-4 am-list-thumb">
+                                    <a href="###" class="">
+                                        <img src="img/q1.jpg" class="pet_list_one_img" alt=""/>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-right pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_l">
+                                        <div class="pet_list_one_info_ico"><img src="img/a6.png" alt=""></div>
+                                        <div class="pet_list_one_info_name">La Da Dee</div>
+                                    </div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_video_tag">视频</div>
+                                    </div>
+                                </div>
+                                <div class=" am-u-sm-8 am-list-main pet_list_one_nr">
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="###" class="">不是说好做彼此的天使吗？连最后一口汉堡也不给我</a></h3>
+                                    <div class="am-list-item-text pet_list_one_text">国外网友waxiestapple在论坛Reddit贴出爱犬照片，指出“我的狗狗好像瘦了点”“因为我刚刚把最后一口汉堡吃掉”，只见这只哈士奇一脸惨遭背叛的样子，对主人露出相当不可思议的表情。</div>
+
+                                </div>
+                                <div class="am-u-sm-4 am-list-thumb pet_video_info">
+                                    <div class="pet_video_info_tag"><i class="iconfont">&#xe62d;</i>03:50</div>
+                                    <a href="###" class="">
+                                        <img src="img/q4.jpg" class="pet_list_one_img" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-right pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_l">
+                                        <div class="pet_list_one_info_ico"><img src="img/a2.png" alt=""></div>
+                                        <div class="pet_list_one_info_name">AbsScript</div>
+                                    </div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_list_tag_zzs">趣闻</div>
+                                    </div>
+                                </div>
+                                <div class=" am-u-sm-8 am-list-main pet_list_one_nr">
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="###" class="">怦然心动！澳洲大眼宝宝逆天睫毛萌翻全球！</a></h3>
+                                    <div class="am-list-item-text pet_list_one_text">来自澳大利亚布里斯班的十个月大的萌宝Egypt拥有一双修长的睫毛、清澈的眼眸，可爱的模样让她在社交网站上爆红。</div>
+
+                                </div>
+                                <div class="am-u-sm-4 am-list-thumb">
+                                    <a href="###" class="">
+                                        <img src="img/q5.jpg" class="pet_list_one_img" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="am-g am-list-item-desced pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_l">
+                                        <div class="pet_list_one_info_ico"><img src="img/a3.png" alt=""></div>
+                                        <div class="pet_list_one_info_name">养了猫的飞飞</div>
+                                    </div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_list_tag_stj">阅读</div>
+                                    </div>
+                                </div>
+                                <div class=" am-list-main">
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="###" class="">浣熊孤儿掉到树下，被一家人收养之后……</a></h3>
+                                    <ul data-am-widget="gallery" class="am-gallery am-avg-sm-3
+  am-avg-md-3 am-avg-lg-3 am-gallery-default pet_list_one_list" >
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/qq1.jpg"  alt="某天 也许会相遇 相遇在这个好地方"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/qq2.jpg"  alt="不要太担心 只因为我相信"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/qq3.jpg"  alt="终会走过这条遥远的道路"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="am-list-item-text pet_list_two_text">巴哈马拿骚的居民Rosie Kemp发现一个刚出生的浣熊，掉在了树下。因为找不到小浣熊的妈妈了，Rosie和她的女儿Laura Young决定收养这只小东西，并给她取名“小南瓜”。</div>
+                                </div>
+                            </li>
+
+                            <li class="am-g am-list-item-desced pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_tytj"><i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico pet_list_tytj_ico">&#xe607;</i>诺奖得主回忆通知获奖那一刻</div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_list_tag_kty">图集</div>
+                                    </div>
+                                </div>
+                                <div class=" am-list-main">
+                                    <ul data-am-widget="gallery" class="am-gallery am-avg-sm-3
+  am-avg-md-3 am-avg-lg-3 am-gallery-default pet_list_one_list pet_list_one_tytj" >
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/w1.jpg"  alt="某天 也许会相遇 相遇在这个好地方"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/w2.jpg"  alt="不要太担心 只因为我相信"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/w3.jpg"  alt="终会走过这条遥远的道路"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/w4.jpg"  alt="终会走过这条遥远的道路"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/w5.jpg"  alt="终会走过这条遥远的道路"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="am-gallery-item">
+                                                <a href="###" class="">
+                                                    <img src="img/w6.jpg"  alt="终会走过这条遥远的道路"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="am-g am-list-item-desced pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_l">
+                                        <div class="pet_list_one_info_ico"><img src="img/a4.png" alt=""></div>
+                                        <div class="pet_list_one_info_name">大兔</div>
+                                    </div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_list_tag_zzs">趣闻</div>
+                                    </div>
+                                </div>
+                                <div class=" am-list-main">
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="###" class="">“你的旅行，是什么颜色？” 晒照片，换北欧梦幻极光之旅！</a></h3>
+
+
+                                    <div class="am-list-item-text pet_list_two_text">狗狗会天天的跟着我们生活在一起，它们的一切都会影响着主人，尤其是狗狗身上散发的味道，会无时无刻的对主人有影响，如果狗狗身体有异味，主人就会用过于香喷喷的洗漱品帮狗狗洗澡，这样不仅对狗狗身体有伤害，还会容易患上皮肤病，其实，我们知道一些小技巧，就会改善狗狗身上存在的味道。</div>
+
+                                </div>
+                            </li>
+                            <li class="am-g am-list-item-desced pet_list_one_block">
+                                <div class="pet_list_one_info">
+                                    <div class="pet_list_one_info_l">
+                                        <div class="pet_list_one_info_ico"><img src="img/a5.png" alt=""></div>
+                                        <div class="pet_list_one_info_name">Hope</div>
+                                    </div>
+                                    <div class="pet_list_one_info_r">
+                                        <div class="pet_list_tag pet_list_tag_mzt">萌专题</div>
+                                    </div>
+                                </div>
+                                <div class=" am-list-main">
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="###" class="">心情不好了，就来看看这只狗！</a></h3>
+                                    <div class="pet_list_zt_img"><img src="img/c1.png" alt=""></div>
+
+                                    <div class="am-list-item-text pet_list_two_text">猫咪不像人，猫咪的情绪不会写在脸上，反馈给我们的信息更多的应该是行为上肢体上的，当然从叫声中也会反应一些信息，那么要想“抓住它的心，就一定要抓住它的胃吗？”从它的行为和肢体语言当中我们可以读懂什么呢？</div>
+
+                                </div>
+                            </li>
+                            <li class="am-g am-list-item-desced pet_list_one_block">
+                                <div class="pet_article_user_block">
+                                    <div class="pet_article_user_img">
+                                        <div class="pet_article_user_shadow"></div>
+                                        <div class="pet_article_user_title">一周在任意地点工作三天？</div>
+                                        <img src="img/c2.png" alt=""></div>
+                                    <div class="pet_article_user_info">
+                                        <div class="pet_article_user_info_ico"><img src="img/c.png" alt=""></div>SeeYouAgain
+                                    </div>
+                                    <div class="am-list-item-text pet_article_user_nr">这是一家帮助客户在亚太地区找到适合的打折酒店的中介机构，在全球设立了9个办事处，老板克里斯蒂安·米施勒宣称要把它打造成世界上最棒的公司。</div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="pet_article_footer_info">Copyright(c)2015 Amaze UI All Rights Reserved</div>
+    </div>
+</div>
+
+<script th:src="@{/js/amazeui.min.js}"></script>
+
+<script>
+    $(function(){
+        // 动态计算优酷土豆QQ视频等视频引用尺寸问题
+        function auto_video(){
+            var iframe_width = $('article > embed').width();
+            $('article > embed').height(iframe_width/4*3);
+            $('article > embed').css({'display':'block','margin':'20px auto'});
+        }
+        // 动态计算新闻列表文字样式
+        auto_resize();
+        auto_video();
+        $(window).resize(function() {
+            auto_resize();
+            auto_video();
+        });
+        $('.am-list-thumb img').load(function(){
+            auto_resize();
+        });
+        $('.pet_article_like li:last-child').css('border','none');
+        function auto_resize(){
+            $('.pet_list_one_nr').height($('.pet_list_one_img').height());
+            // alert($('.pet_list_one_nr').height());
+        }
+        $('.pet_article_user').on('click',function(){
+            if($('.pet_article_user_info_tab').hasClass('pet_article_user_info_tab_show')){
+                $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_show').addClass('pet_article_user_info_tab_cloes');
+            }else{
+                $('.pet_article_user_info_tab').removeClass('pet_article_user_info_tab_cloes').addClass('pet_article_user_info_tab_show');
+            }
+        });
+
+        $('.pet_head_gd_ico').on('click',function(){
+            $('.pet_more_list').addClass('pet_more_list_show');
+        });
+        $('.pet_more_close').on('click',function(){
+            $('.pet_more_list').removeClass('pet_more_list_show');
+        });
+    });
+
+</script>
+</body>
+</html>
